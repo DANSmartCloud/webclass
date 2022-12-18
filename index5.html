@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+      <title>DAN智云-404</title>
+      <meta http-equiv = "refresh" content = "20; url = books.html" />
+   </head>
+   <body>
+      <div class="overlay"><iframe width="100%" height="300px" src="https://dansmartcloud.github.io/next-DANSC/3dbk.html" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+         <h1><strong>DAN智云-404</strong></h1>
+         <h2><strong>很抱歉，本网站已停止服务！</strong></h1>
+           <p>由于业务调整，DAN智云已于2022年11月29日18：00：00停止本网站的开放服务，不过当前仍然可以访问电子教材查看与下载页面。非常感谢您对DAN智云的理解与支持！</p>
+           <h3><strong>页面将在20S之后自动<a href="books.html">跳转至电子教材页面</a></strong></h3>
+      </div>
+    
+   </body>
+</html>
+<html>
+<head>
+ 
+</head>
+<body>
+   <script src="js/fireworks.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    
+</head>
+ 
+<body>
+    <span class="js-cursor-container"></span>
+    <script>
+        (function fairyDustCursor() {
+ 
+            var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var cursor = { x: width / 2, y: width / 2 };
+            var particles = [];
+ 
+            function init() {
+                bindEvents();
+                loop();
+            }
+ 
+            // Bind events that are needed
+            function bindEvents() {
+                document.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('resize', onWindowResize);
+            }
+ 
+            function onWindowResize(e) {
+                width = window.innerWidth;
+                height = window.innerHeight;
+            }
+ 
+            function onMouseMove(e) {
+                cursor.x = e.clientX;
+                cursor.y = e.clientY;
+ 
+                addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            }
+ 
+            function addParticle(x, y, color) {
+                var particle = new Particle();
+                particle.init(x, y, color);
+                particles.push(particle);
+            }
+ 
+            function updateParticles() {
+ 
+                // Updated
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+ 
+                // Remove dead particles
+                for (var i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i].lifeSpan < 0) {
+                        particles[i].die();
+                        particles.splice(i, 1);
+                    }
+                }
+ 
+            }
+ 
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+ 
+            /**
+             * Particles
+             */
+ 
+            function Particle() {
+ 
+                this.character = "*";
+                this.lifeSpan = 120; //ms
+                this.initialStyles = {
+                    "position": "fixed",
+                    "display": "inline-block",
+                    "top": "0px",
+                    "left": "0px",
+                    "pointerEvents": "none",
+                    "touch-action": "none",
+                    "z-index": "10000000",
+                    "fontSize": "25px",
+                    "will-change": "transform"
+                };
+ 
+                // Init, and set properties
+                this.init = function (x, y, color) {
+ 
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+ 
+                    this.position = { x: x + 10, y: y + 10 };
+                    this.initialStyles.color = color;
+ 
+                    this.element = document.createElement('span');
+                    this.element.innerHTML = this.character;
+                    applyProperties(this.element, this.initialStyles);
+                    this.update();
+ 
+                    document.querySelector('.js-cursor-container').appendChild(this.element);
+                };
+ 
+                this.update = function () {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+ 
+                    this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+ 
+                this.die = function () {
+                    this.element.parentNode.removeChild(this.element);
+                }
+ 
+            }
+ 
+            /**
+             * Utils
+             */
+ 
+            // Applies css `properties` to an element.
+            function applyProperties(target, properties) {
+                for (var key in properties) {
+                    target.style[key] = properties[key];
+                }
+            }
+ 
+            if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+        })();    
+    </script>
+</body>
+ <p><a href="index3.html">.</a></p>
+</html>
